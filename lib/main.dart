@@ -1,11 +1,13 @@
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:tasks_app/utils/constants.dart';
+import 'package:tasks_app/views/screens/authentication/signin_screen.dart';
+import 'package:tasks_app/views/screens/authentication/reset_password_screen.dart';
+import 'package:tasks_app/views/screens/authentication/signup_screen.dart';
+import 'package:tasks_app/views/screens/home_screen.dart';
 import 'package:tasks_app/views/screens/pageView/page_view_screen.dart';
 
 void main() async{
-  await Firebase.initializeApp();
   WidgetsFlutterBinding.ensureInitialized();
   runApp(const MyApp());
 }
@@ -30,7 +32,13 @@ class MyApp extends StatelessWidget {
         scaffoldBackgroundColor: backgroundColor,
         primarySwatch: Colors.blue,
       ),
-      home: PageViewScreen(),
+      routes: {
+        HomeScreen.routeName: (context) => HomeScreen(),
+        SignUpScreen.routeName: (context) => SignUpScreen(),
+        SignInScreen.routeName: (context) => SignInScreen(),
+        ResetPasswordScreen.routeName: (context) => ResetPasswordScreen(),
+      },
+      home: HomeScreen(),
     );
   }
 }
