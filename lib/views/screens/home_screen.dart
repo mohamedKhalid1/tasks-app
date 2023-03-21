@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:tasks_app/utils/constants.dart';
-import 'package:tasks_app/views/widgets/button_widget.dart';
 import 'package:tasks_app/views/widgets/taskItem.dart';
-
 import '../widgets/floating_action_button_widget.dart';
-import '../widgets/textfiled_widget.dart';
 
 class HomeScreen extends StatelessWidget {
   HomeScreen({

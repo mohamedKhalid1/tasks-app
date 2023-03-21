@@ -38,7 +38,7 @@ class MyApp extends StatelessWidget {
         SignInScreen.routeName: (context) => SignInScreen(),
         ResetPasswordScreen.routeName: (context) => ResetPasswordScreen(),
       },
-      home: HomeScreen(),
+      home: SignUpScreen(),
     );
   }
 }

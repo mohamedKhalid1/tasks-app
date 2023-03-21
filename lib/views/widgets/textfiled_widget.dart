@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tasks_app/utils/constants.dart';
 
 class TextFieldInput extends StatelessWidget {
   final TextEditingController textEditingController;
@@ -25,9 +26,18 @@ class TextFieldInput extends StatelessWidget {
         borderRadius: BorderRadius.circular(10),
       ),
       child: TextFormField(
-        validator: (value) => validate(value),
+        validator: (value) {
+          if(value == ""||value == null){
+            return "please $hintText";
+          }
+          else if(hintText == "Enter your email"&&!validateEmail(value)){
+            return "please enter valid email";
+          }
+          return null;
+        },
         controller: textEditingController,
         decoration: InputDecoration(
+          errorStyle: mainTextStyle,
           hintText: hintText,
           hintStyle: const TextStyle(fontSize: 16,color: Colors.black26),
           border: InputBorder.none,
