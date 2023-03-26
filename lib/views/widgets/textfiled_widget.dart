@@ -6,11 +6,13 @@ class TextFieldInput extends StatelessWidget {
   final bool isPass;
   final String hintText;
   final TextInputType textInputType;
+  final Function()? onTapped;
 
   const TextFieldInput({
     Key? key,
     required this.textEditingController,
     this.isPass = false,
+    this.onTapped,
     required this.hintText,
     required this.textInputType,
   }) : super(key: key);
@@ -23,6 +25,7 @@ class TextFieldInput extends StatelessWidget {
         borderRadius: BorderRadius.circular(10),
       ),
       child: TextFormField(
+        onTap: onTapped,
         validator: (value) {
           if (value == "" || value == null) {
             return "please $hintText";

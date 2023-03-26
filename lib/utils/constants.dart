@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:tasks_app/views/screens/done_tasks_screen.dart';
+import 'package:tasks_app/views/screens/new_tasks_screen.dart';
+
+import '../views/screens/archived_tasks_screen.dart';
 
 Color mainColor = const Color(0xff3fbfbf);
 Color backgroundColor = const Color(0xfff0f0f0);
@@ -24,3 +28,9 @@ validateEmail(String email) {
       r"^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,253}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,253}[a-zA-Z0-9])?)*$");
   return emailReg.hasMatch(email);
 }
+
+List<Widget> screens=[
+  NewTasksScreen(),
+  DoneTasksScreen(),
+  ArchivedTasksScreen()
+];
