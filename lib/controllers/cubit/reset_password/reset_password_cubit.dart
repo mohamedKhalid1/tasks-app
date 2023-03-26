@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -8,4 +9,16 @@ class ResetPasswordCubit extends Cubit<ResetPasswordState> {
 
   static ResetPasswordCubit get(context) => BlocProvider.of(context);
 
+  Future<void> resetPassword({required String email}) async {
+    try {
+      emit(ResetPasswordLoading());
+
+      await FirebaseAuth.instance.sendPasswordResetEmail(email: email);
+      emit(ResetPasswordSuccess());
+    } on FirebaseAuthException catch (e) {
+      emit(ResetPasswordFailure(e.message.toString()));
+    } catch (e) {
+      emit(ResetPasswordFailure(e.toString()));
+    }
+  }
 }

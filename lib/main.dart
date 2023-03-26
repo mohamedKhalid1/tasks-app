@@ -1,3 +1,4 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:tasks_app/utils/constants.dart';
@@ -5,10 +6,11 @@ import 'package:tasks_app/views/screens/authentication/signin_screen.dart';
 import 'package:tasks_app/views/screens/authentication/reset_password_screen.dart';
 import 'package:tasks_app/views/screens/authentication/signup_screen.dart';
 import 'package:tasks_app/views/screens/home_screen.dart';
-import 'package:tasks_app/views/screens/pageView/page_view_screen.dart';
 
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+
   runApp(const MyApp());
 }
 

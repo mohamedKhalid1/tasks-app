@@ -6,7 +6,6 @@ class TextFieldInput extends StatelessWidget {
   final bool isPass;
   final String hintText;
   final TextInputType textInputType;
-  final Function validate;
 
   const TextFieldInput({
     Key? key,
@@ -14,12 +13,10 @@ class TextFieldInput extends StatelessWidget {
     this.isPass = false,
     required this.hintText,
     required this.textInputType,
-    required this.validate
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-
     return Container(
       decoration: BoxDecoration(
         color: Colors.white,
@@ -27,11 +24,12 @@ class TextFieldInput extends StatelessWidget {
       ),
       child: TextFormField(
         validator: (value) {
-          if(value == ""||value == null){
+          if (value == "" || value == null) {
             return "please $hintText";
-          }
-          else if(hintText == "Enter your email"&&!validateEmail(value)){
+          } else if (hintText == "Enter your email" && !validateEmail(value)) {
             return "please enter valid email";
+          } else if (hintText == "Enter your password" && value.length < 6) {
+            return "Password should be at least 6 characters";
           }
           return null;
         },
@@ -39,7 +37,7 @@ class TextFieldInput extends StatelessWidget {
         decoration: InputDecoration(
           errorStyle: mainTextStyle,
           hintText: hintText,
-          hintStyle: const TextStyle(fontSize: 16,color: Colors.black26),
+          hintStyle: const TextStyle(fontSize: 16, color: Colors.black26),
           border: InputBorder.none,
           contentPadding: const EdgeInsets.all(12),
         ),

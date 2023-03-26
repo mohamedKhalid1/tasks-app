@@ -54,7 +54,6 @@ class FloatingActionButtonWidget extends StatelessWidget {
                             textEditingController: titleController,
                             hintText: "Enter your task title",
                             textInputType: TextInputType.name,
-                            validate: () {},
                           ),
                           const SizedBox(
                             height: 10,
@@ -70,7 +69,6 @@ class FloatingActionButtonWidget extends StatelessWidget {
                             textEditingController: descriptionController,
                             hintText: "Enter your Task description",
                             textInputType: TextInputType.name,
-                            validate: () {},
                           ),
                           const SizedBox(
                             height: 10,
@@ -86,7 +84,6 @@ class FloatingActionButtonWidget extends StatelessWidget {
                             textEditingController: dateController,
                             hintText: "Enter your Task date",
                             textInputType: TextInputType.name,
-                            validate: () {},
                           ),
                           const SizedBox(
                             height: 10,
@@ -102,7 +99,6 @@ class FloatingActionButtonWidget extends StatelessWidget {
                             textEditingController: timeController,
                             hintText: "Enter your Task time",
                             textInputType: TextInputType.name,
-                            validate: () {},
                           ),
                           const SizedBox(
                             height: 10,
@@ -118,7 +114,6 @@ class FloatingActionButtonWidget extends StatelessWidget {
                             textEditingController: degreeOfImportantController,
                             hintText: "Enter your degree of important",
                             textInputType: TextInputType.name,
-                            validate: () {},
                           ),
                           ButtonWidget(onPress: () {}, text: "Add Task")
                         ],

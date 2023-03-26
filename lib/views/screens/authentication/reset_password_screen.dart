@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:tasks_app/controllers/cubit/reset_password/reset_password_cubit.dart';
 
 import '../../widgets/authentication/reset_password_body.dart';
 
@@ -8,9 +10,12 @@ class ResetPasswordScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        body: ResetPasswordBody(),
+    return BlocProvider(
+      create: (context) => ResetPasswordCubit(),
+      child: SafeArea(
+        child: Scaffold(
+          body: ResetPasswordBody(),
+        ),
       ),
     );
   }
