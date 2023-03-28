@@ -23,14 +23,20 @@ getSnackBar(context, String title, Color color) {
   ));
 }
 
-validateEmail(String email) {
-  final emailReg = RegExp(
-      r"^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,253}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,253}[a-zA-Z0-9])?)*$");
-  return emailReg.hasMatch(email);
-}
+// validateEmail(String email) {
+//   final emailReg = RegExp(
+//       r"^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,253}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,253}[a-zA-Z0-9])?)*$");
+//   return emailReg.hasMatch(email);
+// }
 
 List<Widget> screens=[
   NewTasksScreen(),
   DoneTasksScreen(),
   ArchivedTasksScreen()
+];
+
+List<String> titles=[
+  "New Tasks",
+  "Done Tasks",
+  "Archived Tasks"
 ];

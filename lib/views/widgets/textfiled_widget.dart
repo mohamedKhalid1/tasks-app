@@ -29,8 +29,6 @@ class TextFieldInput extends StatelessWidget {
         validator: (value) {
           if (value == "" || value == null) {
             return "please $hintText";
-          } else if (hintText == "Enter your email" && !validateEmail(value)) {
-            return "please enter valid email";
           } else if (hintText == "Enter your password" && value.length < 6) {
             return "Password should be at least 6 characters";
           }
