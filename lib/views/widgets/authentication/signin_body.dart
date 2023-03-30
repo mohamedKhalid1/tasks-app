@@ -24,12 +24,12 @@ class SignInBody extends StatelessWidget {
       listener: (context, state) {
         if (state is SignInFailure) {
           getSnackBar(context, state.error, Colors.red);
-        } if(state is SignInSuccess) {
-          Navigator.of(context)
-              .pushNamed(HomeScreen.routeName);
-          getSnackBar(context, "SignIn Successfully",
-              Colors.green);
-        }      },
+        }
+        if (state is SignInSuccess) {
+          Navigator.of(context).pushNamed(HomeScreen.routeName);
+          getSnackBar(context, "SignIn Successfully", Colors.green);
+        }
+      },
       builder: (context, state) {
         return SingleChildScrollView(
           child: SizedBox(
@@ -123,10 +123,10 @@ class SignInBody extends StatelessWidget {
                       );
                     },
                     fallback: (context) {
-                      return ButtonWidget (
+                      return ButtonWidget(
                           onPress: () {
                             if (formKey.currentState!.validate()) {
-                               SignInCubit.get(context).signIn(
+                              SignInCubit.get(context).signIn(
                                   emailAddress: emailController.text,
                                   password: passwordController.text);
                             }

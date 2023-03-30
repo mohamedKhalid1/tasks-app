@@ -8,6 +8,7 @@ import 'package:tasks_app/views/screens/authentication/signin_screen.dart';
 import 'package:tasks_app/views/screens/authentication/reset_password_screen.dart';
 import 'package:tasks_app/views/screens/authentication/signup_screen.dart';
 import 'package:tasks_app/views/screens/home_screen.dart';
+import 'package:tasks_app/views/screens/pageView/page_view_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -39,12 +40,12 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.blue,
         ),
         routes: {
-          HomeScreen.routeName: (context) => HomeScreen(),
-          SignUpScreen.routeName: (context) => SignUpScreen(),
-          SignInScreen.routeName: (context) => SignInScreen(),
-          ResetPasswordScreen.routeName: (context) => ResetPasswordScreen(),
+          HomeScreen.routeName: (context) => const HomeScreen(),
+          SignUpScreen.routeName: (context) => const SignUpScreen(),
+          SignInScreen.routeName: (context) => const SignInScreen(),
+          ResetPasswordScreen.routeName: (context) => const ResetPasswordScreen(),
         },
-        home: SignInScreen(),
+        home: const PageViewScreen(),
       ),
     );
   }

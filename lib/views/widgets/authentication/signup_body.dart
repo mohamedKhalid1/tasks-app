@@ -27,12 +27,12 @@ class SignUpBody extends StatelessWidget {
       listener: (context, state) {
         if (state is SignUpFailure) {
           getSnackBar(context, state.error, Colors.red);
-        } if(state is SignUpSuccess) {
-          Navigator.of(context)
-              .pushNamed(HomeScreen.routeName);
-          getSnackBar(context, "Sign Up Successfully",
-              Colors.green);
-        }      },
+        }
+        if (state is SignUpSuccess) {
+          Navigator.of(context).pushNamed(HomeScreen.routeName);
+          getSnackBar(context, "Sign Up Successfully", Colors.green);
+        }
+      },
       builder: (context, state) {
         return SingleChildScrollView(
           child: SizedBox(

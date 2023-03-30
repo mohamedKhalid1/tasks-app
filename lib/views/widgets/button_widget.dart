@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
-
 import '../../utils/constants.dart';
 
 class ButtonWidget extends StatelessWidget {
-  const ButtonWidget({Key? key, required this.onPress, required this.text}) : super(key: key);
+  const ButtonWidget({Key? key, required this.onPress, required this.text})
+      : super(key: key);
   final Function onPress;
   final String text;
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -13,9 +14,7 @@ class ButtonWidget extends StatelessWidget {
       height: 66,
       width: double.infinity,
       decoration: BoxDecoration(
-        color: mainColor,
-        borderRadius: BorderRadius.circular(10)
-      ),
+          color: mainColor, borderRadius: BorderRadius.circular(10)),
       child: TextButton(
         onPressed: () {
           onPress();

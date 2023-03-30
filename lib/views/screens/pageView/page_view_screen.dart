@@ -45,7 +45,9 @@ class PageViewScreen extends StatelessWidget {
                     ],
                   ),
                 ),
-                SizedBox(height: MediaQuery.of(context).size.height*0.12,),
+                SizedBox(
+                  height: MediaQuery.of(context).size.height * 0.12,
+                ),
                 ButtonWidget(
                   onPress: () {
                     return Navigator.pushReplacementNamed(

@@ -25,6 +25,11 @@ class TextFieldInput extends StatelessWidget {
         borderRadius: BorderRadius.circular(10),
       ),
       child: TextFormField(
+        maxLines: hintText == "Enter your Task description" ? 3 : 1,
+        readOnly: hintText == "Enter your Task date" ||
+                hintText == "Enter your Task time"
+            ? true
+            : false,
         onTap: onTapped,
         validator: (value) {
           if (value == "" || value == null) {

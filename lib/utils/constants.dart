@@ -29,14 +29,10 @@ getSnackBar(context, String title, Color color) {
 //   return emailReg.hasMatch(email);
 // }
 
-List<Widget> screens=[
-  NewTasksScreen(),
-  DoneTasksScreen(),
-  ArchivedTasksScreen()
+List<Widget> screens = [
+  const NewTasksScreen(),
+  const DoneTasksScreen(),
+  const ArchivedTasksScreen(),
 ];
 
-List<String> titles=[
-  "New Tasks",
-  "Done Tasks",
-  "Archived Tasks"
-];
+List<String> titles = ["New Tasks", "Done Tasks", "Archived Tasks"];

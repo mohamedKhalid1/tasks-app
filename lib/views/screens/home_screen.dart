@@ -18,14 +18,18 @@ class HomeScreen extends StatelessWidget {
         appBar: AppBar(
           backgroundColor: backgroundColor,
           elevation: 0,
-          title: Text(titles[tasksCubit.currentIndex],style: mainTextStyleBoldBig.copyWith(color: Colors.black),),
-
+          title: Text(
+          titles[tasksCubit.currentIndex],
+            style: mainTextStyleBoldBig.copyWith(fontSize: 25,color: Colors.black),
+          ),
+          centerTitle: true,
         ),
         body: screens[tasksCubit.currentIndex],
         floatingActionButton: FloatingActionButtonWidget(),
         bottomNavigationBar: BottomNavigationBar(
             selectedItemColor: mainColor,
-            backgroundColor: backgroundColor,
+            backgroundColor: Colors.transparent,
+            elevation: 0,
             onTap: (value) {
               tasksCubit.changeCurrentIndex(value);
             },
